@@ -14,6 +14,7 @@ def main():
     blanks = list(itertools.repeat("_", blankCounter))
     guesses = 6
     won = 0
+    guessedList = []
     #prompt user for guess and display rules. Use a function to validate that the user entered only one alpha character. 
     #Function should also check to see if the inputted letter is in the hidden word.
     #If in word, let the user know how many times.
@@ -25,6 +26,8 @@ def main():
                 print(" ".join(blanks) + "\n")
                 guessLetter = input("Enter only one letter: ").upper()
                 blanks, guesses = computeWord(secretList,guessLetter,blanks,guesses)
+                guessedList.append(guessLetter)
+                print("Your guesses: " + " ".join(guessedList) + "\n")
             except:
                 print("Try again")
         else:
@@ -33,19 +36,16 @@ def main():
             break
 
     if won != 1:
-        print("\nNice Try! Better luck next time\n")
+        print("\nNice Try! Better luck next time\nThe word was {0}\n".format(secretWord))
     
 
 #Function to print letters and number of guesses remaining
 def computeWord(secret, letter, reveal, guesses):
-    if len(letter) == 1:
-        if letter.isalpha():
-            print("'{0}' appears {1} time/s in the word!".format(letter,secret.count(letter)))
-            for char in range(0,len(secret)):
-                if secret[char] == letter:
-                    reveal[char] = letter
-        else:
-            print("You entered an incorrect character")
+    if len(letter) == 1 and letter.isalpha():
+        print("'{0}' appears {1} time/s in the word!".format(letter,secret.count(letter)))
+        for char in range(0,len(secret)):
+            if secret[char] == letter:
+                reveal[char] = letter
     else:
         print("You entered an incorrect character")
     if letter not in secret:
