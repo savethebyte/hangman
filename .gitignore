@@ -138,6 +138,7 @@ About
 # vs code stuff
 .editorconfig
 .vscode
+.*workspace
 
 # pip
 requirements.txt
