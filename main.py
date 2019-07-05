@@ -10,8 +10,7 @@ def main():
 
     #secretWord = "cheese"
     secretList = list(secretWord)
-    blankCounter = len(secretWord)
-    blanks = list(itertools.repeat("_", blankCounter))
+    blanks = list(itertools.repeat("_", len(secretWord)))
     guesses = 6
     won = 0
     guessedList = []
