@@ -23,7 +23,7 @@ def main():
         if "_" in blanks:      
             try:
                 print("\nYou have {0} guesses remaining!".format(guesses))
-                print(" ".join(blanks) + "\n")
+                print(" ".join(blanks) + "\n{0} letter word".format(len(blanks)) + "\n")
                 guessLetter = input("Enter only one letter: ").upper()
                 blanks, guesses = computeWord(secretList,guessLetter,blanks,guesses)
                 guessedList.append(guessLetter)
@@ -36,7 +36,7 @@ def main():
             break
 
     if won != 1:
-        print("\nNice Try! Better luck next time\nThe word was {0}\n".format(secretWord))
+        print("\nNice Try! Better luck next time\nThe secret word was {0}\n".format(secretWord))
     
 
 #Function to print letters and number of guesses remaining
