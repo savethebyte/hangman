@@ -24,8 +24,9 @@ def main():
                 print("\nYou have {0} guesses remaining!".format(guesses))
                 print(" ".join(blanks) + "\n{0} letter word".format(len(blanks)) + "\n")
                 guessLetter = input("Enter only one letter: ").upper()
-                blanks, guesses = computeWord(secretList,guessLetter,blanks,guesses)
+                blanks, guesses = computeWord(secretList, guessLetter, blanks, guesses)
                 guessList.append(guessLetter)
+                guessList.sort()
                 print("Your guesses: " + " ".join(guessList) + "\n")
             except:
                 print("Try again")
