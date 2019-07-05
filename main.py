@@ -41,7 +41,7 @@ def main():
 #Function to print letters and number of guesses remaining
 def computeWord(secret, letter, reveal, guesses):
     if len(letter) == 1 and letter.isalpha():
-        print("'{0}' appears {1} time/s in the word!".format(letter,secret.count(letter)))
+        print("'{0}' appears {1} time/s in the word!".format(letter, secret.count(letter)))
         for char in range(0,len(secret)):
             if secret[char] == letter:
                 reveal[char] = letter
