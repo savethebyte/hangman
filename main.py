@@ -12,7 +12,7 @@ def main():
     secretList = list(secretWord)
     blanks = list(itertools.repeat("_", len(secretWord)))
     guesses = 6
-    won = 0
+    won = False
     guessList = []
     #prompt user for guess and display rules. Use a function to validate that the user entered only one alpha character. 
     #Function should also check to see if the inputted letter is in the hidden word.
@@ -31,10 +31,10 @@ def main():
                 print("Try again")
         else:
             print("\nYou win!\nThe secret word was {0}\n".format(secretWord))
-            won = 1
+            won = True
             break
 
-    if won != 1:
+    if won != True:
         print("\nNice Try! Better luck next time\nThe secret word was {0}\n".format(secretWord))
     
 
